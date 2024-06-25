@@ -18,10 +18,40 @@ int main(void)
     int score1 = compute_score(word1);
     int score2 = compute_score(word2);
 
-    // TODO: Print the winner
+    // Print the scores
+    printf("Player 1 score: %d\n", score1);
+    printf("Player 2 score: %d\n", score2);
+
+    // Determine and print the winner
+    if (score1 > score2)
+    {
+        printf("Player 1 wins!\n");
+    }
+    else if (score1 < score2)
+    {
+        printf("Player 2 wins!\n");
+    }
+    else
+    {
+        printf("It's a tie!\n");
+    }
 }
 
 int compute_score(string word)
 {
-    // TODO: Compute and return score for string
+    int score = 0;
+
+    // Iterate through each character in the word
+    for (int i = 0, n = strlen(word); i < n; i++)
+    {
+        // Check if the character is an uppercase or lowercase letter
+        if (isalpha(word[i]))
+        {
+            // Convert the letter to uppercase and calculate the corresponding score
+            int index = toupper(word[i]) - 'A';
+            score += POINTS[index];
+        }
+    }
+
+    return score;
 }

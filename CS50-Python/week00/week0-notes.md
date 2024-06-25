@@ -14,3 +14,11 @@
 - Data Types
     - https://docs.python.org/3/library/datatypes.html
 - Input = Left | Passes value to the right of the = sign
+
+
+Lecture Notes
+- psuedocode-comments
+use #
+ignores comments
+
+str = String
